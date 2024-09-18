@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hacked By Gaspar,AQUI E BRASIL</title>
+    <link rel="icon" href="https://i.imgur.com/h9FaEPN_d.webp?maxwidth=760&fidelity=grand" type="image/webp">
+    <style>
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            100% { opacity: 0.5; }
+        }
+        @keyframes colorChange {
+            0% { color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: green; }
+            80% { color: blue; }
+            100% { color: purple; }
+        }
+        @keyframes phraseBlink {
+            0% { opacity: 1; color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: green; }
+            80% { color: blue; }
+            100% { opacity: 0.5; color: purple; }
+        }
+        @keyframes moveLeftRight {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(calc(100vh + 100px)); }
+        }
+        @keyframes deustBlink {
+            0% { opacity: 1; color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: green; }
+            80% { color: blue; }
+            100% { opacity: 0.5; color: purple; }
+        }
+        @keyframes deusColorChange {
+            0% { color: red; }
+            20% { color: orange; }
+            40% { color: yellow; }
+            60% { color: green; }
+            80% { color: blue; }
+            100% { color: purple; }
+        }
+        body {
+            background-color: black;
+            color: red;
+            font-size: 2rem;
+            font-family: 'Creepster', cursive;
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            border: 2px solid red;
+            box-sizing: border-box;
+            animation: borderColorChange 6s infinite linear, borderBlink 0.5s infinite alternate;
+            position: relative;
+        }
+        h1 {
+            font-size: 2.5rem;
+            background-image: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: rainbow 2s infinite linear, blink 0.5s infinite alternate;
+            margin-top: 0px; /* Ajustado para centralizar */
+        }
+        span.lucifer {
+            animation: colorChange 5s infinite linear;
+            font-family: 'Press Start 2P', cursive;
+        }
+        a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-image: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            animation: rainbow 2s infinite linear, blink 0.5s infinite alternate;
+            margin-top: 20px;
+        }
+        .marquee {
+            position: absolute;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            top: 0;
+            animation: moveLeftRight 10s linear infinite;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-image: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .marquee-bottom {
+            position: absolute;
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            bottom: 0;
+            animation: moveLeftRight 10s linear infinite;
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-image: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            transform: rotate(180deg);
+        }
+        .video-container {
+            display: none;
+        }
+        .message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+            color: red;
+            padding: 20px;
+            border: 2px solid red;
+            display: none;
+            font-size: 1rem;
+        }
+        .phrase {
+            margin-top: 20px;
+            font-size: 2rem;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+            animation: phraseBlink 3s infinite;
+        }
+        .deus {
+            font-size: 2rem;
+            background-image: linear-gradient(45deg, red, orange, yellow, green, blue, purple);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: deusColorChange 5s infinite linear;
+            text-shadow: 2px 2px 4px black;
+        }
+        /* Efeito de neve */
+        .snow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .snowflake {
+            position: absolute;
+            width: 12px; /* Tamanho mínimo das bolinhas de neve */
+            height: 12px; /* Tamanho mínimo das bolinhas de neve */
+            background-color: white;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.8); /* Brilho ajustado */
+            opacity: 0.8;
+            pointer-events: none;
+            z-index: 1000;
+            animation: fall linear infinite;
+            transform: translateY(-100px); /* Começa fora da tela */
+        }
+        .snowflake:nth-of-type(1) { width: 14px; height: 14px; }
+        .snowflake:nth-of-type(2) { width: 16px; height: 16px; }
+        .snowflake:nth-of-type(3) { width: 18px; height: 18px; }
+        .snowflake:nth-of-type(4) { width: 20px; height: 20px; }
+        .snowflake:nth-of-type(5) { width: 22px; height: 22px; }
+    </style>
+</head>
+<body>
+    <div class="snow"></div>
+    <div class="marquee">
+        <span>| Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar |</span>
+    </div>
+    <h1>Hacked By <span class="Gaspar">Gaspar</span></h1>
+    <a href="https://www.instagram.com/strawhats_69/" target="_blank" rel="noopener noreferrer">
+        <span>Instagram:</span> <span class="rainbow-text">pablohgasp</span>
+    </a>
+    <br>
+    <img id="image" src="https://i.imgur.com/h9FaEPN_d.webp?maxwidth=760&fidelity=grand" alt="Imagem" style="width: 100%; max-width: 420px; height: auto;"> <!-- Tamanho da imagem aumentado -->
+    <div class="phrase">"O único erro dentre todas as perfeitas criações de <span class="deus">Deus</span>, é a humanidade."</div>
+    <div class="video-container">
+        <iframe id="hidden-video" src="https://www.youtube.com/embed/E0z_TXMNc6Q?autoplay=1&start=1&loop=1&playlist=E0z_TXMNc6Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width: 0; height: 0;"></iframe>
+    </div>
+    <div class="marquee-bottom">
+        <span>| Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar | Gaspar |</span>
+    </div>
+
+    <script>
+        // Função para criar bolinhas de neve
+        function createSnowflakes() {
+            const snowContainer = document.querySelector('.snow');
+            const numberOfSnowflakes = 100;
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.animationDuration = Math.random() * 10 + 10 + 's'; // Ajustado para um intervalo mais longo
+                snowflake.style.animationDelay = Math.random() * 10 + 's';
+                snowflake.style.opacity = Math.random();
+                snowContainer.appendChild(snowflake);
+            }
+        }
+
+        // Criar as bolinhas de neve
+        createSnowflakes();
+
+        // Função para abrir uma nova aba
+        function openInstagram() {
+            window.open('https://www.instagram.com/pablohgasp/', '_blank');
+        }
+
+        // Função para reabrir a aba do Instagram se o usuário tentar fechar
+        function keepOpeningInstagram() {
+            setInterval(function() {
+                openInstagram();
+            }, 10000); // Tentar abrir a cada 10 segundos
+        }
+
+        // Iniciar a abertura repetida do Instagram
+        keepOpeningInstagram();
+
+        // Função para manter a tela cheia
+        function go_full_screen() {
+            if (document.documentElement.requestFullscreen) { /* Standard */
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { /* Safari and Opera */
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { /* IE/Edge */
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+
+        // Mantém a tela cheia após carregar
+        window.onload = go_full_screen;
+
+        // Detecta quando a tecla Esc é pressionada para restaurar a tela cheia
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                go_full_screen();
+            }
+        });
+
+        function bypassUnload(event) {
+            event.preventDefault();
+            event.returnValue = '';
+            document.getElementById("message").style.display = "block";
+            setTimeout(function() {
+                document.getElementById("message").style.display = "none";
+            }, 2000);
+            openInstagram();
+        }
+
+        window.addEventListener('beforeunload', bypassUnload);
+
+        // Reatribuindo o evento onbeforeunload periodicamente para garantir a persistência
+        setInterval(function() {
+            window.removeEventListener('beforeunload', bypassUnload);
+            window.addEventListener('beforeunload', bypassUnload);
+        }, 100);
+
+        // Previne o uso do botão de voltar do navegador
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+
+        // Prevenindo a execução do Ctrl+W (fechar aba)
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'w') {
+                event.preventDefault();
+                alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+                openInstagram();
+            }
+        });
+
+        // Prevenindo o Ctrl+F4 (fechar aba) no Windows
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'F4') {
+                event.preventDefault();
+                alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+                openInstagram();
+            }
+        });
+
+        // Prevenindo o Alt+ F4 (fechar aba) no Windows
+        document.addEventListener('keydown', function(event) {
+            if (event.altKey && event.key === 'F4') {
+                event.preventDefault();
+                alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+                openInstagram();
+            }
+        });
+
+        // Prevenindo o Ctrl+Shift+I (Ferramentas de desenvolvedor)
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'I') {
+                event.preventDefault();
+                alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+                openInstagram();
+            }
+        });
+
+        // Prevenindo o Ctrl+U (Ver código fonte)
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey || event.metaKey) && event.key === 'U') {
+                event.preventDefault();
+                alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+                openInstagram();
+            }
+        });
+
+        // Prevenindo o Ctrl+Shift+J (Console)
+        document.addEventListener('keydown', function(event) {
+            if ((event.ctrlKey || event.metaKey) && event.shiftKey && event.key === 'J') {
+                event.preventDefault();
+                alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+                openInstagram();
+            }
+        });
+
+        // Exibir alerta repetidamente após carregar a página
+        setInterval(function() {
+            alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+        }, 30000); // 30 segundos de intervalo entre alertas
+
+        // Forçar a tela cheia quando a página é fechada
+        window.addEventListener('beforeunload', function (event) {
+            go_full_screen();
+            alert("Gaspar domina, segue a gente no insta: @pablohgasp");
+            openInstagram();
+        });
+
+        // Adicionando a pegadinha para o botão direito do mouse
+        document.addEventListener('contextmenu', function(event) {
+            event.preventDefault();
+            alert("Gaspar desativou seu botão direito do mouse! Segue a gente no insta: @pablohgasp");
+        });
+
+        // Adicionando função para abrir Instagram ao clicar na tela
+        document.addEventListener('click', function() {
+            openInstagram();
+        });
+    </script>
+</body>
+</html>
